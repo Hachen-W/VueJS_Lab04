@@ -1,0 +1,13 @@
+.generate-colors(@n, @i: 1) when (@i =< @n) {
+  .item-@{i} {
+    color: rgb(@i, 256 - @i, 0);
+  }
+  .generate-colors(@n, (@i + 1));
+}
+
+
+.number-list {
+  list-style: none;
+  padding: 0;
+  .generate-colors(100);
+}
